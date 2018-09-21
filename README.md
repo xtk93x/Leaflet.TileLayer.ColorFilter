@@ -40,21 +40,29 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
  
 # Cool Tips
 
-## This plugin is very useful to easily make dark map layers. 
+This plugin is very useful to easily make dark map layers. 
 
-### The following settings is enough to make most of the light maps to become dark:
+The following settings is enough to make most of the light maps to become dark:
 
     var colorSettings = {
         grayscale: '100%',
         invert: '100%',
     }
 
-### If you want to keep water and street colors, a 180 hue rotation is very helpful to correct the color invertion:
+To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color invertion:
 
     var colorSettings = {
  		hue: '180deg',
         invert: '100%',
     }
+    
+Light maps may also look good:
+
+	var colorSettings = {
+ 		brightness: '110%',
+ 		hue: '90deg',
+ 		saturate: '120%',
+ 	}
 
 # Changelog
 

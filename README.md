@@ -47,7 +47,7 @@ This plugin is very useful to easily make dark map layers.
 The following settings is enough to make most of the light maps to become dark:
 
 ```js
-    var colorSettings = {
+var colorSettings = {
     grayscale: '100%',
     invert: '100%',
     }

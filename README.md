@@ -4,7 +4,7 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 ![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/sidebyside.png)
 
 ## Demo
-- [TileLayerColorize Demo](https://xtk93x.github.io/Leaflet.TileLayerColorize/)
+- [Leaflet.TileLayerColorize Demo](https://xtk93x.github.io/Leaflet.TileLayerColorize/)
 
 # Basic Usage
 ```js

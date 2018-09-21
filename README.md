@@ -27,4 +27,4 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 
 The only difference between L.tileLayerColorize and the original L.tileLayer is the new option `colorize`. 
 `colorize` accepts an object with the following attributes:
- - **blur**: applies a Gaussian blur filtering measured in pixels, e.g., `'2px'`. Default: `'0px'`.
+ - **blur**: applies a Gaussian blur filtering measured in pixels, e.g., `{ blur: '2px' }`. Default: `'0px'`.

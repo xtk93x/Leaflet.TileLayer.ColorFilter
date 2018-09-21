@@ -1,0 +1,61 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
+<script src="src/leaflet-tilelayer-colorize.js"></script>
+
+<div id="container">
+	<div id="map-default"></div>
+	<div id="map-dark"></div>
+	<div id="map-dark-colorized"></div>
+	<div id="map-colorized"></div>
+</div>
+
+<style> 
+ 	body { margin: 0; }
+ 	#container { display: flex; flex-wrap: wrap; }
+	#map-default { height: 50vh; width: 50%; }
+	#map-dark { height: 50vh; width: 50%; }
+	#map-dark-colorized { height: 50vh; width: 50%; }
+	#map-colorized { height: 50vh; width: 50%; }
+</style>
+
+<script>
+ 	var defaultMap = L.map('map-default').setView([51.505, -0.09], 14);
+ 	var darkMap = L.map('map-dark').setView([51.505, -0.09], 14);
+ 	var darkColorizedMap = L.map('map-dark-colorized').setView([51.505, -0.09], 14);
+ 	var colorizedMap = L.map('map-colorized').setView([51.505, -0.09], 14);
+
+ 	var darkSettings = {
+ 		grayscale: '100%',
+ 		invert: '100%',
+ 	}
+ 	
+ 	var darkColorizedSettings = {
+	    hue: '185deg',
+	    invert: '100%',
+ 	}
+
+    var colorizedSettings = {
+	    brightness: '110%',
+	    hue: '90deg',
+	    saturate: '120%',
+ 	}
+
+ 	L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+		attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+    }).addTo(defaultMap);
+
+    L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+		attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+	    colorize: darkSettings
+    }).addTo(darkMap);
+
+    L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+		attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+	    colorize: darkColorizedSettings
+    }).addTo(darkColorizedMap);
+
+    L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+		attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+	    colorize: colorizedSettings
+    }).addTo(colorizedMap);
+</script>

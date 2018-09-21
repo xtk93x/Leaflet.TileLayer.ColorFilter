@@ -67,4 +67,4 @@ Light maps may also look good:
 # Changelog
 
 ## 2018.09.20
-- Plugin was created
+- Plugin created

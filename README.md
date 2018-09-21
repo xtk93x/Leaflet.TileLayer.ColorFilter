@@ -52,6 +52,7 @@ var colorSettings = {
     invert: '100%',
     }
 ```
+![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/dark.png)
 
 To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color invertion:
 
@@ -61,6 +62,7 @@ var colorSettings = {
     invert: '100%',
 }
 ```
+![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/dark-colorized.png)
     
 Light maps may also look good:
 

@@ -45,26 +45,26 @@ This plugin is very useful to easily make dark map layers.
 The following settings is enough to make most of the light maps to become dark:
 
     var colorSettings = {
-        grayscale: '100%',
-        invert: '100%',
+         grayscale: '100%',
+         invert: '100%',
     }
 
 To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color invertion:
 
     var colorSettings = {
- 		hue: '180deg',
+        hue: '180deg',
         invert: '100%',
     }
     
 Light maps may also look good:
 
-	var colorSettings = {
- 		brightness: '110%',
- 		hue: '90deg',
- 		saturate: '120%',
- 	}
+    var colorSettings = {
+        brightness: '110%',
+        hue: '90deg',
+        saturate: '120%',
+    }
 
 # Changelog
 
 ## 2018.09.20
-- Plugin creation
+- Plugin was created

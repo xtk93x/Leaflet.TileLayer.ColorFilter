@@ -25,6 +25,15 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 
 #### L.tileLayerColorize(url, options)
 
-The only difference between L.tileLayerColorize and the original L.tileLayer is the new option `colorize`. 
+The only difference between L.tileLayerColorize and the original L.tileLayer is the new option `colorize` inside `options` parameter. 
+
 `colorize` accepts an object with the following attributes:
  - **blur**: applies a Gaussian blur filtering measured in pixels, e.g., `{ blur: '2px' }`. Default: `'0px'`.
+ - **brightness**: controls the brightness of tile image, e.g., `{ brightness: '150%' }`. Default value is `100%`.
+ - **contrast**: changes the color contrast of tiles, e.g., `{ contrast: '120%' }`. Default value is `100%`.
+ - **grayscale**: changes the color of tiles to a grayscale, e.g., `{ grayscale: '100%' }`. Default value is `0%`.
+ - **hue**: applies a hue rotation in degrees on tile colors, e.g., `{ hue: '30deg' }`. Default value is `0deg`.
+ - **opacity**: defines the opacity of the tiles, e.g., `{ opacity: '90%' }`. Default value is `100%`.
+ - **invert**: invert the tile colors, e.g., `{ invert: '100%' }`. Default value is `0%`.
+ - **saturate**: saturates the tile colors, e.g., `{ saturate: '130%' }`. Default value is `100%`.
+ - **sepia**: converts the tile colors to sepia, e.g., `{ sepia: '100%' }`. Default value is `0%`.

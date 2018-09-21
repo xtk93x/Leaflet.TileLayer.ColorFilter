@@ -3,24 +3,24 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 
 # Basic Usage
 ```js
-    var map = L.map('map').setView([51.505, -0.09], 14);
+var map = L.map('map').setView([51.505, -0.09], 14);
     
-    var colorSettings = {
-        blur: '0px',
-        brightness: '100%',
-        contrast: '100%',
-        grayscale: '0%',
-        hue: '0deg',
-        opacity: '100%',
-        invert: '0%',
-        saturate: '100%',
-        sepia: '0%'
-    }
+var colorSettings = {
+    blur: '0px',     
+    brightness: '100%',
+    contrast: '100%',
+    grayscale: '0%',
+    hue: '0deg',
+    opacity: '100%',
+    invert: '0%',
+    saturate: '100%',
+    sepia: '0%'
+}
 
-    L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-        attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-        colorize: colorSettings
-    }).addTo(map);
+L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+    colorize: colorSettings
+}).addTo(map);
 ```
     
 # Reference
@@ -46,25 +46,31 @@ This plugin is very useful to easily make dark map layers.
 
 The following settings is enough to make most of the light maps to become dark:
 
+```js
     var colorSettings = {
-         grayscale: '100%',
-         invert: '100%',
+    grayscale: '100%',
+    invert: '100%',
     }
+```
 
 To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color invertion:
 
-    var colorSettings = {
-        hue: '180deg',
-        invert: '100%',
-    }
+```js
+var colorSettings = {
+    hue: '180deg',
+    invert: '100%',
+}
+```
     
 Light maps may also look good:
 
-    var colorSettings = {
-        brightness: '110%',
-        hue: '90deg',
-        saturate: '120%',
-    }
+```js
+var colorSettings = {
+    brightness: '110%',
+    hue: '90deg',
+    saturate: '120%',
+}
+```
 
 # Changelog
 

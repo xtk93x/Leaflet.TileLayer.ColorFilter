@@ -37,3 +37,30 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
  - **invert**: invert the tile colors, e.g., `{ invert: '100%' }`. Default `0%`.
  - **saturate**: saturates the tile colors, e.g., `{ saturate: '130%' }`. Default `100%`.
  - **sepia**: converts the tile colors to sepia, e.g., `{ sepia: '100%' }`. Default `0%`.
+ 
+ # Fast all in one file example
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
+    <script src="lib/leaflet-tilelayer-colorize.js"></script>
+    <div id="map"></div>
+    <style> 
+        body { margin: 0; }
+        #map { height: 100vh; }
+    </style>
+
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 14);
+
+        var colorSettings = {
+            grayscale: '100%',
+            invert: '100%',
+        }
+
+        var colorizedTile = L.tileLayerColorize('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            colorize: colorSettings
+        });
+
+        colorizedTile.addTo(map);
+    </script>

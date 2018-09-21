@@ -38,20 +38,24 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
  - **saturate**: saturates the tile colors, e.g., `{ saturate: '130%' }`. Default `100%`.
  - **sepia**: converts the tile colors to sepia, e.g., `{ sepia: '100%' }`. Default `0%`.
  
-# Tips
+# Cool Tips
 
-This plugin is very useful to easily make dark map layers. For most of the default color maps, e.g., openstreetmap, the following simple settings is enough to make it dark:
+## This plugin is very useful to easily make dark map layers. 
+
+### The following settings is enough to make most of the light maps to become dark:
 
     var colorSettings = {
         grayscale: '100%',
         invert: '100%',
     }
-    
-    L.tileLayerColorize('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        colorize: colorSettings
-    }).addTo(map);
-    
+
+### If you want to keep water and street colors, a 180 hue rotation is very helpful to correct the color invertion:
+
+    var colorSettings = {
+ 		hue: '180deg',
+        invert: '100%',
+    }
+
 # Changelog
 
 ## 2018.09.20

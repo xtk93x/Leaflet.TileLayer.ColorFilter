@@ -16,8 +16,8 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
         sepia: '0%'
     }
 
-    L.tileLayerColorize('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+		attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
         colorize: colorSettings
     }).addTo(map);
     

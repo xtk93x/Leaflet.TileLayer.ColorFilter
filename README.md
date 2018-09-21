@@ -38,7 +38,7 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
  - **saturate**: saturates the tile colors, e.g., `{ saturate: '130%' }`. Default `100%`.
  - **sepia**: converts the tile colors to sepia, e.g., `{ sepia: '100%' }`. Default `0%`.
  
-# Cool Tips
+# Useful Tips
 
 This plugin is very useful to easily make dark map layers. 
 
@@ -67,4 +67,4 @@ Light maps may also look good:
 # Changelog
 
 ## 2018.09.20
-- Plugin creating
+- Plugin creation

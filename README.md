@@ -2,6 +2,7 @@
 A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 
 # Basic Usage
+```js
     var map = L.map('map').setView([51.505, -0.09], 14);
     
     var colorSettings = {
@@ -20,6 +21,7 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
         attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
         colorize: colorSettings
     }).addTo(map);
+```
     
 # Reference
 

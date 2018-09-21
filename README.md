@@ -71,6 +71,9 @@ var colorSettings = {
     saturate: '120%',
 }
 ```
+![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/colorized.png)
+
+
 
 # Changelog
 

@@ -49,9 +49,6 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
 | **Sepia** | sepia | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
  
 # Useful Tips
-
-This plugin is very useful to easily make dark map layers. 
-
 **The following settings is enough to make most of the light maps to become dark:**
 
 ```js

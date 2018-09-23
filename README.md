@@ -83,6 +83,22 @@ let colorSettings = [
 ```
 ![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/colorized.png)
 
+**The filter order matters:**
+
+```js
+let leftMap = [
+    'invert:100%',
+    'brightness:115%',
+    'hue:186deg'
+]
+let rightMap = [
+    'hue:186deg',
+    'brightness:115%',
+    'invert:100%',
+]
+```
+![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/filterorder.png)
+
 # Changelog
 
 ## 2018.09.23

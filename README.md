@@ -88,6 +88,7 @@ let leftcolorSettings = [
     'brightness:115%',
     'hue:186deg'
 ]
+
 let rightcolorSettings = [
     'hue:186deg',
     'brightness:115%',

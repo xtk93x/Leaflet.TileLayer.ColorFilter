@@ -35,15 +35,18 @@ L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
 The only difference between L.tileLayerColorize and the original L.tileLayer is the new option `colorize` inside `options` parameter. 
 
 `colorize` accepts an array of string filters with the following format:
- - **blur**: applies a Gaussian blur filtering measured in pixels, e.g., `[ 'blur:2px' ]`. Default: `'0px'`.
- - **brightness or bright**: controls the brightness of tile image, e.g., `[ 'brightness:150%' ]`. Default `100%`.
- - **contrast**: changes the color contrast of tiles, e.g., `[ 'contrast:150%' ]`. Default `100%`.
- - **grayscale or gray**: changes the color of tiles to a grayscale, e.g., `[ 'grayscale:100%' ]`. Default `0%`.
- - **hue, hue-rotate or hue-rotation**: applies a hue rotation in degrees on tile colors, e.g., `[ 'hue:180deg' ]`. Default `0deg`.
- - **opacity**: defines the opacity of the tiles, e.g., `[ 'opacity:60%' ]`. Default `100%`.
- - **invert or inv**: invert the tile colors, e.g., `[ 'invert:100%' ]`. Default `0%`.
- - **saturate or saturation**: saturates the tile colors, e.g., `[ 'saturate:150%' ]`. Default `100%`.
- - **sepia**: converts the tile colors to sepia, e.g., `[ 'sepia:0%' ]`. Default `0%`.
+
+| Filter | Aliases | Description | Example | Default |
+| --- | --- | --- | --- | --- |
+| **Blur** | blur | applies a Gaussian blur filtering measured in pixels |  `'blur:2px'` | `0px` |
+| **Brightness** | brightness or bright | controls the brightness of tile image |  `'brightness:150%'` | `100%` |
+| **Contrast** | contrast | changes the color contrast of tiles |   `'contrast:150%'` | `100%` |
+| **Grayscale** | grayscale or gray | changes the color of tiles to a grayscale |  `'grayscale:100%'` | `0%` |
+| **Hue-rotate** | hue, hue-rotate or hue-rotation | applies a hue rotation in degrees on tile colors |  `'hue:180deg'` | `0deg` |
+| **Opacity** | opacity | defines the opacity of the tiles | `'opacity:60%'` | `100%` |
+| **Invert** | invert or inv | invert the tile colors | `'invert:100%'` | `0%` |
+| **Saturate** | saturate or saturation | saturates the tile colors | `'saturate:150%'` | `100%` |
+| **Sepia** | sepia | converts the tile colors to sepia | `'sepia:0%'` | `0%` |
  
 # Useful Tips
 

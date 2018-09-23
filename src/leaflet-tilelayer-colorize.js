@@ -18,7 +18,7 @@ L.TileLayerColorize = L.TileLayer.extend({
 
 		let colorizeOptions = this.options.colorize;
 		let filterSettings = colorizeOptions.map((opt) => {
-			let filter = opt.split(':');
+			let filter = opt.toLowerCase().split(':');
 			if (filter.length === 2) {
 				let match = VALIDFILTERS.find(vf => {
 					return (vf.split(':')[0] === filter[0]);

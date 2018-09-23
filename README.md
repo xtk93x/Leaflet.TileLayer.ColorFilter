@@ -11,15 +11,15 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 let map = L.map('map').setView([51.505, -0.09], 14);
     
 let colorSettings = [
-	'blur:0px',
-	'brightness:100%',
-	'contrast:100%',
-	'grayscale:0%',
-	'hue:0deg',
-	'opacity:100%',
-	'invert:0%',
-	'saturate:100%',
-	'sepia:0%',
+    'blur:0px',
+    'brightness:100%',
+    'contrast:100%',
+    'grayscale:0%',
+    'hue:0deg',
+    'opacity:100%',
+    'invert:0%',
+    'saturate:100%',
+    'sepia:0%',
 ]
 
 L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
@@ -35,15 +35,18 @@ L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
 The only difference between L.tileLayerColorize and the original L.tileLayer is the new option `colorize` inside `options` parameter. 
 
 `colorize` accepts an array of string filters with the following format:
- - **blur**: applies a Gaussian blur filtering measured in pixels, e.g., `[ 'blur:2px' ]`. Default: `'0px'`.
- - **brightness or bright**: controls the brightness of tile image, e.g., `[ 'brightness:150%' ]`. Default `100%`.
- - **contrast**: changes the color contrast of tiles, e.g., `[ 'contrast:150%' ]`. Default `100%`.
- - **grayscale or gray**: changes the color of tiles to a grayscale, e.g., `[ 'grayscale:100%' ]`. Default `0%`.
- - **hue, hue-rotate or hue-rotation**: applies a hue rotation in degrees on tile colors, e.g., `[ 'hue:180deg' ]`. Default `0deg`.
- - **opacity**: defines the opacity of the tiles, e.g., `[ 'opacity:60%' ]`. Default `100%`.
- - **invert or inv**: invert the tile colors, e.g., `[ 'invert:100%' ]`. Default `0%`.
- - **saturate or saturation**: saturates the tile colors, e.g., `[ 'saturate:150%' ]`. Default `100%`.
- - **sepia**: converts the tile colors to sepia, e.g., `[ 'sepia:0%' ]`. Default `0%`.
+
+| Filter | Aliases | Description | Example | Default |
+| --- | --- | --- | --- | --- |
+| **Blur** | blur | Applies a Gaussian blur filtering measured in pixels |  `['blur:2px']` | 0px |
+| **Brightness** | brightness or bright | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
+| **Contrast** | contrast | Changes the color contrast of tiles |   `['contrast:150%']` | 100% |
+| **Grayscale** | grayscale or gray | Changes the color of tiles to a grayscale |  `['grayscale:100%']` | 0% |
+| **Hue-Rotate** | hue, hue-rotate or hue-rotation | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |
+| **Opacity** | opacity | Defines the opacity of the tiles | `['opacity:60%']` | 100% |
+| **Invert** | invert or inv | Invert the tile colors | `['invert:100%']` | 0% |
+| **Saturate** | saturate or saturation | Saturates the tile colors | `['saturate:150%']` | 100% |
+| **Sepia** | sepia | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
  
 # Useful Tips
 

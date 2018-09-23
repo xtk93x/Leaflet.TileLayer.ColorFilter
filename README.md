@@ -86,12 +86,12 @@ let colorSettings = [
 **The filter order matters:**
 
 ```js
-let leftMap = [
+let leftcolorSettings = [
     'invert:100%',
     'brightness:115%',
     'hue:186deg'
 ]
-let rightMap = [
+let rightcolorSettings = [
     'hue:186deg',
     'brightness:115%',
     'invert:100%',

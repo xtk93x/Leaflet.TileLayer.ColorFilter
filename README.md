@@ -38,15 +38,15 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
 
 | Filter | Aliases | Description | Example | Default |
 | --- | --- | --- | --- | --- |
-| **Blur** | blur | applies a Gaussian blur filtering measured in pixels |  `'blur:2px'` | `0px` |
-| **Brightness** | brightness or bright | controls the brightness of tile image |  `'brightness:150%'` | `100%` |
-| **Contrast** | contrast | changes the color contrast of tiles |   `'contrast:150%'` | `100%` |
-| **Grayscale** | grayscale or gray | changes the color of tiles to a grayscale |  `'grayscale:100%'` | `0%` |
-| **Hue-rotate** | hue, hue-rotate or hue-rotation | applies a hue rotation in degrees on tile colors |  `'hue:180deg'` | `0deg` |
-| **Opacity** | opacity | defines the opacity of the tiles | `'opacity:60%'` | `100%` |
-| **Invert** | invert or inv | invert the tile colors | `'invert:100%'` | `0%` |
-| **Saturate** | saturate or saturation | saturates the tile colors | `'saturate:150%'` | `100%` |
-| **Sepia** | sepia | converts the tile colors to sepia | `'sepia:0%'` | `0%` |
+| **Blur** | blur | Applies a Gaussian blur filtering measured in pixels |  `['blur:2px']` | 0px |
+| **Brightness** | brightness or bright | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
+| **Contrast** | contrast | Changes the color contrast of tiles |   `['contrast:150%']` | 100% |
+| **Grayscale** | grayscale or gray | Changes the color of tiles to a grayscale |  `['grayscale:100%']` | 0% |
+| **Hue-Rotate** | hue, hue-rotate or hue-rotation | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |
+| **Opacity** | opacity | Defines the opacity of the tiles | `['opacity:60%']` | 100% |
+| **Invert** | invert or inv | Invert the tile colors | `['invert:100%']` | 0% |
+| **Saturate** | saturate or saturation | Saturates the tile colors | `['saturate:150%']` | 100% |
+| **Sepia** | sepia | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
  
 # Useful Tips
 

@@ -4,32 +4,43 @@ L.TileLayerColorize = L.TileLayer.extend({
 	},
 
 	colorizePresets: function () {
-		var preset = this.options.colorize;
-		var filterSettings = '';
+		let VALIDFILTERS = [
+			'blur',
+			'brightness', 'bright:brightness',
+			'contrast',
+			'grayscale', 'gray:grayscale',
+			'hue-rotate', 'hue:hue-rotate', 'hue-rotation:hue-rotate',
+			'invert', 'inv:invert',
+			'opacity',
+			'saturate', 'saturation:saturate',
+			'sepia'
+		]
 
-		filterSettings += (preset.blur) ? `blur(${preset.blur}) ` : '';
-		filterSettings += (preset.brightness) ? `brightness(${preset.brightness}) ` : '';
-		filterSettings += (preset.contrast) ? `contrast(${preset.contrast}) ` : '';
-		filterSettings += (preset.grayscale) ? `grayscale(${preset.grayscale}) ` : '';
-		filterSettings += (preset.hue) ? `hue-rotate(${preset.hue}) ` : '';
-		filterSettings += (preset.invert) ? `invert(${preset.invert}) ` : '';
-		filterSettings += (preset.opacity) ? `opacity(${preset.opacity}) ` : '';
-		filterSettings += (preset.saturate) ? `saturate(${preset.saturate}) ` : '';
-		filterSettings += (preset.sepia) ? `sepia(${preset.sepia}) ` : '';
-
-		return filterSettings;
+		let colorizeOptions = this.options.colorize;
+		let filterSettings = colorizeOptions.map((opt) => {
+			let filter = opt.split(':');
+			if (filter.length === 2) {
+				let match = VALIDFILTERS.find(vf => {
+					return (vf.split(':')[0] === filter[0]);
+				});
+				if (match) {
+					match = match.split(':');
+					return (`${match[match.length - 1]}(${filter[1]})`);
+				}
+			}
+			return ('');
+		}).join(' ');
+		return (filterSettings);
 	},
-
-	/* Version 0.7.7 */
-	_getTile: function () {
-		var tile = L.TileLayer.prototype._getTile.call(this);
+	/* Version 1.3.4 */
+	createTile: function (coords, done) {
+		let tile = L.TileLayer.prototype.createTile.call(this, coords, done);
 		tile.style.filter = this.colorizePresets();
 		return tile;
 	},
-
-	/* Version 1.3.4 */
-	createTile: function (coords, done) {
-		var tile = L.TileLayer.prototype.createTile.call(this, coords, done);
+	/* Version 0.7.7 */
+	_getTile: function () {
+		let tile = L.TileLayer.prototype._getTile.call(this);
 		tile.style.filter = this.colorizePresets();
 		return tile;
 	},

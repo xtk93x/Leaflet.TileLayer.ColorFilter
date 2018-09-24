@@ -49,9 +49,6 @@ The only difference between L.tileLayerColorize and the original L.tileLayer is 
 | **Sepia** | sepia | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
  
 # Useful Tips
-
-This plugin is very useful to easily make dark map layers. 
-
 **The following settings is enough to make most of the light maps to become dark:**
 
 ```js
@@ -82,6 +79,23 @@ let colorSettings = [
 ]
 ```
 ![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/colorized.png)
+
+**The filter order matters:**
+
+```js
+let leftcolorSettings = [
+    'invert:100%',
+    'brightness:115%',
+    'hue:186deg'
+]
+
+let rightcolorSettings = [
+    'hue:186deg',
+    'brightness:115%',
+    'invert:100%',
+]
+```
+![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/filterorder.png)
 
 # Changelog
 

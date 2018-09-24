@@ -5,15 +5,15 @@ L.TileLayerColorize = L.TileLayer.extend({
 
 	colorizePresets: function () {
 		let VALIDFILTERS = [
-			'blur',
-			'brightness', 'bright:brightness',
-			'contrast',
-			'grayscale', 'gray:grayscale',
-			'hue-rotate', 'hue:hue-rotate', 'hue-rotation:hue-rotate',
-			'invert', 'inv:invert',
-			'opacity',
-			'saturate', 'saturation:saturate',
-			'sepia'
+			'blur:px',
+			'brightness:%', 'bright:brightness:%',
+			'contrast:%',
+			'grayscale:%', 'gray:grayscale:%',
+			'hue-rotate:deg', 'hue:hue-rotate:deg', 'hue-rotation:hue-rotate:deg',
+			'invert:%', 'inv:invert:%',
+			'opacity:%',
+			'saturate:%', 'saturation:saturate:%',
+			'sepia:%'
 		]
 
 		let colorizeOptions = this.options.colorize;
@@ -25,7 +25,8 @@ L.TileLayerColorize = L.TileLayer.extend({
 				});
 				if (match) {
 					match = match.split(':');
-					return (`${match[match.length - 1]}(${filter[1]})`);
+					filter[1] += /^\d+$/.test(filter[1]) ? match[match.length - 1] : ''
+					return (`${match[match.length - 2]}(${filter[1]})`);
 				}
 			}
 			return ('');

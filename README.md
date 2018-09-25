@@ -10,17 +10,16 @@ A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
 
-// myFilter are setted to default. Change one or more values to see the filter in action.
 let myFilter = [
     'blur:0px',
-    'brightness:100%',
-    'contrast:100%',
-    'grayscale:0%',
-    'hue:0deg',
+    'brightness:95%',
+    'contrast:130%',
+    'grayscale:20%',
+    'hue:290deg',
     'opacity:100%',
-    'invert:0%',
-    'saturate:100%',
-    'sepia:0%',
+    'invert:100%',
+    'saturate:300%',
+    'sepia:10%',
 ];
 
 L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {

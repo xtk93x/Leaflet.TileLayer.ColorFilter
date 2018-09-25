@@ -10,7 +10,7 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
     
-let colorSettings = [
+let myFilters = [
     'blur:0px',
     'brightness:100%',
     'contrast:100%',
@@ -24,7 +24,7 @@ let colorSettings = [
 
 L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    colorFilter: colorSettings
+    filters: myFilters
 }).addTo(map);
 ```
     
@@ -52,7 +52,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 **The following settings is enough to make most of the light maps to become dark:**
 
 ```js
-let colorSettings = [
+let myFilters = [
      'grayscale:100%',
      'invert:100%',
 ]
@@ -62,7 +62,7 @@ let colorSettings = [
 **To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color inversion:**
 
 ```js
-let colorSettings = [
+let myFilters = [
      'hue:180deg',
      'invert:100%',
 ]
@@ -72,7 +72,7 @@ let colorSettings = [
 **Light maps may also look good:**
 
 ```js
-let colorSettings = [
+let myFilters = [
      'brightness:110%',
      'hue:90deg',
      'saturate:120%',
@@ -83,13 +83,13 @@ let colorSettings = [
 **The filter order matters:**
 
 ```js
-let leftcolorSettings = [
+let leftColoFilters = [
     'invert:100%',
     'brightness:115%',
     'hue:186deg'
 ]
 
-let rightcolorSettings = [
+let rightColorFilters = [
     'hue:186deg',
     'brightness:115%',
     'invert:100%',

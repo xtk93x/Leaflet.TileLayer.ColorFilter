@@ -9,7 +9,8 @@ A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 # Basic Usage
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
-    
+
+// myFilter are setted to default. Change one or more values to see the filter in action.
 let myFilter = [
     'blur:0px',
     'brightness:100%',
@@ -24,7 +25,7 @@ let myFilter = [
 
 L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    filter: myFilter
+    filter: myFilter,
 }).addTo(map);
 ```
     
@@ -42,7 +43,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 | **Brightness** | brightness, bright | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
 | **Contrast** | contrast, con | Changes the color contrast of tiles |   `['contrast:150%']` | 100% |
 | **Grayscale** | grayscale, gray | Changes the color of tiles to a grayscale |  `['grayscale:100%']` | 0% |
-| **Hue-Rotate** | hue, hue-rotate, hue-rotation | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |
+| **Hue-Rotate** | hue-rotate, hue-rotation, hue | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |
 | **Opacity** | opacity, op | Defines the opacity of the tiles | `['opacity:60%']` | 100% |
 | **Invert** | invert, inv | Invert the tile colors | `['invert:100%']` | 0% |
 | **Saturate** | saturate, saturation, sat | Saturates the tile colors | `['saturate:150%']` | 100% |

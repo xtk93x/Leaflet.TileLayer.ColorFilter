@@ -1,3 +1,9 @@
+/*
+  Leaflet.TileLayer.ColorFilter
+  (c) 2018, Claudio T. Kawakani
+  A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
+  https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
+*/
 L.TileLayer.ColorFilter = L.TileLayer.extend({
 	intialize: function (url, options) {
 		L.TileLayer.prototype.initialize.call(this, url, options);
@@ -6,7 +12,7 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 	colorFilter: function () {
 		let VALIDFILTERS = [
 			'blur:px',
-			'brightness:%', 'bright:brightness:%',
+			'brightness:%', 'bright:brightness:%', 'bri:brightness:%',
 			'contrast:%', 'con:contrast:%',
 			'grayscale:%', 'gray:grayscale:%',
 			'hue-rotate:deg', 'hue:hue-rotate:deg', 'hue-rotation:hue-rotate:deg',

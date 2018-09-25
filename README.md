@@ -7,6 +7,16 @@ A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 - [Leaflet.TileLayer.ColorFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
 
 # Basic Usage
+
+To use this plugin, just import leaflet-tilelayer-colorfilter.min.js **after** leaflet.js:
+```html
+<link rel="stylesheet" href="leaflet.css" />
+<script src="leaflet.js"></script>
+
+<script src="leaflet-tilelayer-colorfilter.min.js"></script>
+```
+
+Setting up the map with L.tileLayer.colorFilter:
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
 
@@ -27,14 +37,9 @@ L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     filter: myFilter,
 }).addTo(map);
 ```
-Note: import leaflet-tilelayer-colorfilter.min.js **after** leaflet.js:
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
 
-<script src="leaflet-tilelayer-colorfilter.min.js"></script>
-```
-    
+A minimal complete example can be found in [example](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/tree/master/example/) folder.
+
 # Reference
 
 #### L.tileLayer.colorFilter(url, options)
@@ -64,7 +69,7 @@ let myFilter = [
      'invert:100%',
 ]
 ```
-![dark](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/dark.png)
+![dark](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/dark.png)
 
 **To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color inversion:**
 
@@ -74,7 +79,7 @@ let myFilter = [
      'invert:100%',
 ]
 ```
-![dark-colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/dark-colorized.png)
+![dark-colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/dark-colorized.png)
     
 **Light maps may also look good:**
 
@@ -85,7 +90,7 @@ let myFilter = [
      'saturate:120%',
 ]
 ```
-![colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/colorized.png)
+![colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/colorized.png)
 
 **The filter order matters:**
 
@@ -102,7 +107,7 @@ let rightColorFilter = [
     'invert:100%',
 ]
 ```
-![filterorder](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/filterorder.png)
+![filterorder](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/filterorder.png)
 
 # Changelog
 ## 2018.09.24

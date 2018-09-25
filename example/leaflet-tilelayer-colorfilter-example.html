@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+    <script src="leaflet-tilelayer-colorfilter.min.js"></script>
+    <style>
+        #map {
+            width: 77vw;
+            height: 77vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+
+</html>
+<script>
+    let map = L.map('map').setView([51.505, -0.09], 14);
+
+    let defaultToDarkFilter = [
+        'grayscale:100%',
+        'invert:100%',
+    ]
+
+    L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+        attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+        filter: defaultToDarkFilter
+    }).addTo(map);
+</script>

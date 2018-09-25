@@ -3,7 +3,7 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 		L.TileLayer.prototype.initialize.call(this, url, options);
 	},
 
-	colorFilters: function () {
+	colorFilter: function () {
 		let VALIDFILTERS = [
 			'blur:px',
 			'brightness:%', 'bright:brightness:%',
@@ -36,13 +36,13 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 	/* Version 1.3.4 */
 	createTile: function (coords, done) {
 		let tile = L.TileLayer.prototype.createTile.call(this, coords, done);
-		tile.style.filter = this.colorFilters();
+		tile.style.filter = this.colorFilter();
 		return tile;
 	},
 	/* Version 0.7.7 */
 	_getTile: function () {
 		let tile = L.TileLayer.prototype._getTile.call(this);
-		tile.style.filter = this.colorFilters();
+		tile.style.filter = this.colorFilter();
 		return tile;
 	},
 })

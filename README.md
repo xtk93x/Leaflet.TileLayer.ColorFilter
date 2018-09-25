@@ -30,7 +30,7 @@ L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     
 # Reference
 
-#### L.tileLayer.ColorFilter(url, options)
+#### L.tileLayer.colorFilter(url, options)
 
 The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer that includes a new option `filters` inside `options` parameter. 
 

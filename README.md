@@ -1,10 +1,10 @@
-# Leaflet.TileLayerColorize
+# Leaflet.TileLayer.ColorFilter
 A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 
-![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/sidebyside.png)
+![sidebyside](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/sidebyside.png)
 
 ## Demo
-- [Leaflet.TileLayerColorize Demo](https://xtk93x.github.io/Leaflet.TileLayerColorize/)
+- [Leaflet.TileLayer.ColorFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
 
 # Basic Usage
 ```js
@@ -22,19 +22,19 @@ let colorSettings = [
     'sepia:0%',
 ]
 
-L.tileLayerColorize('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    colorize: colorSettings
+    colorFilter: colorSettings
 }).addTo(map);
 ```
     
 # Reference
 
-#### L.tileLayerColorize(url, options)
+#### L.tileLayer.ColorFilter(url, options)
 
-The only difference between L.tileLayerColorize and the original L.tileLayer is the new option `colorize` inside `options` parameter. 
+The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer that includes a new option `filters` inside `options` parameter. 
 
-`colorize` accepts an array of string filters with the following format:
+`filters` accepts an array of string filters with the following format:
 
 | Filter | Aliases | Description | Example | Default |
 | --- | --- | --- | --- | --- |
@@ -57,7 +57,7 @@ let colorSettings = [
      'invert:100%',
 ]
 ```
-![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/dark.png)
+![dark](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/dark.png)
 
 **To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color inversion:**
 
@@ -67,7 +67,7 @@ let colorSettings = [
      'invert:100%',
 ]
 ```
-![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/dark-colorized.png)
+![dark-colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/dark-colorized.png)
     
 **Light maps may also look good:**
 
@@ -78,7 +78,7 @@ let colorSettings = [
      'saturate:120%',
 ]
 ```
-![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/colorized.png)
+![colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/colorized.png)
 
 **The filter order matters:**
 
@@ -95,7 +95,7 @@ let rightcolorSettings = [
     'invert:100%',
 ]
 ```
-![alt text](https://github.com/xtk93x/Leaflet.TileLayerColorize/blob/master/samples/filterorder.png)
+![filterorder](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/filterorder.png)
 
 # Changelog
 

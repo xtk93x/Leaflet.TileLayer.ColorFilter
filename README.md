@@ -98,9 +98,11 @@ let rightColorFilter = [
 ![filterorder](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/filterorder.png)
 
 # Changelog
+## 2018.09.24
+- Plugin renamed to Leaflet.TileLayer.ColorFilter.
 
 ## 2018.09.23
 - Changed from object to array of strings, because the filter order matters. Moreover, the same filter can be used more than once.
 
 ## 2018.09.20
-- Plugin created
+- Plugin created.

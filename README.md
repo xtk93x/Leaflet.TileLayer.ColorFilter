@@ -1,5 +1,5 @@
 # Leaflet.TileLayer.ColorFilter
-A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
+A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 
 ![sidebyside](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/samples/sidebyside.png)
 
@@ -10,7 +10,7 @@ A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
     
-let myFilters = [
+let myFilter = [
     'blur:0px',
     'brightness:100%',
     'contrast:100%',
@@ -24,17 +24,17 @@ let myFilters = [
 
 L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    filters: myFilters
+    filter: myFilter
 }).addTo(map);
 ```
     
 # Reference
 
-#### L.tileLayer.ColorFilter(url, options)
+#### L.tileLayer.colorFilter(url, options)
 
-The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer that includes a new option `filters` inside `options` parameter. 
+The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer that includes a new option `filter` inside `options` parameter. 
 
-`filters` accepts an array of string filters with the following format:
+`filter` accepts an array of string filters with the following format:
 
 | Filter | Aliases | Description | Example | Default |
 | --- | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 **The following settings is enough to make most of the light maps to become dark:**
 
 ```js
-let myFilters = [
+let myFilter = [
      'grayscale:100%',
      'invert:100%',
 ]
@@ -62,7 +62,7 @@ let myFilters = [
 **To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color inversion:**
 
 ```js
-let myFilters = [
+let myFilter = [
      'hue:180deg',
      'invert:100%',
 ]
@@ -72,7 +72,7 @@ let myFilters = [
 **Light maps may also look good:**
 
 ```js
-let myFilters = [
+let myFilter = [
      'brightness:110%',
      'hue:90deg',
      'saturate:120%',
@@ -83,13 +83,13 @@ let myFilters = [
 **The filter order matters:**
 
 ```js
-let leftColoFilters = [
+let leftColoFilter = [
     'invert:100%',
     'brightness:115%',
     'hue:186deg'
 ]
 
-let rightColorFilters = [
+let rightColorFilter = [
     'hue:186deg',
     'brightness:115%',
     'invert:100%',

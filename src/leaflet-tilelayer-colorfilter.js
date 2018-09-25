@@ -16,7 +16,7 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 			'sepia:%'
 		]
 
-		let colorFilterOptions = this.options.filters;
+		let colorFilterOptions = this.options.filter;
 		let filterSettings = colorFilterOptions.map((opt) => {
 			let filter = opt.toLowerCase().split(':');
 			if (filter.length === 2) {

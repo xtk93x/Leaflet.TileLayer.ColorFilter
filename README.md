@@ -20,7 +20,7 @@ let myFilter = [
     'invert:0%',
     'saturate:100%',
     'sepia:0%',
-]
+];
 
 L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',

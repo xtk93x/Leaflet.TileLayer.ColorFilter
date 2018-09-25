@@ -39,14 +39,14 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 | Filter | Aliases | Description | Example | Default |
 | --- | --- | --- | --- | --- |
 | **Blur** | blur | Applies a Gaussian blur filtering measured in pixels |  `['blur:2px']` | 0px |
-| **Brightness** | brightness or bright | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
-| **Contrast** | contrast or con | Changes the color contrast of tiles |   `['contrast:150%']` | 100% |
-| **Grayscale** | grayscale or gray | Changes the color of tiles to a grayscale |  `['grayscale:100%']` | 0% |
-| **Hue-Rotate** | hue, hue-rotate or hue-rotation | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |
-| **Opacity** | opacity or op | Defines the opacity of the tiles | `['opacity:60%']` | 100% |
-| **Invert** | invert or inv | Invert the tile colors | `['invert:100%']` | 0% |
-| **Saturate** | saturate, saturation or sat | Saturates the tile colors | `['saturate:150%']` | 100% |
-| **Sepia** | sepia or sep | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
+| **Brightness** | brightness, bright | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
+| **Contrast** | contrast, con | Changes the color contrast of tiles |   `['contrast:150%']` | 100% |
+| **Grayscale** | grayscale, gray | Changes the color of tiles to a grayscale |  `['grayscale:100%']` | 0% |
+| **Hue-Rotate** | hue, hue-rotate, hue-rotation | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |
+| **Opacity** | opacity, op | Defines the opacity of the tiles | `['opacity:60%']` | 100% |
+| **Invert** | invert, inv | Invert the tile colors | `['invert:100%']` | 0% |
+| **Saturate** | saturate, saturation, sat | Saturates the tile colors | `['saturate:150%']` | 100% |
+| **Sepia** | sepia, sep | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
  
 # Useful Tips
 **The following settings is enough to make most of the light maps to become dark:**
@@ -86,7 +86,7 @@ let myFilter = [
 let leftColoFilter = [
     'invert:100%',
     'brightness:115%',
-    'hue:186deg'
+    'hue:186deg',
 ]
 
 let rightColorFilter = [

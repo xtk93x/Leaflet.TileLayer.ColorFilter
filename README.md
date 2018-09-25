@@ -27,6 +27,13 @@ L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     filter: myFilter,
 }).addTo(map);
 ```
+Note: import leaflet-tilelayer-colorfilter.min.js **after** leaflet:
+```html
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
+
+	<script src="leaflet-tilelayer-colorfilter.min.js"></script>
+```
     
 # Reference
 

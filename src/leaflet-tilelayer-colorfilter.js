@@ -7,13 +7,13 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 		let VALIDFILTERS = [
 			'blur:px',
 			'brightness:%', 'bright:brightness:%',
-			'contrast:%',
+			'contrast:%', 'con:contrast:%',
 			'grayscale:%', 'gray:grayscale:%',
 			'hue-rotate:deg', 'hue:hue-rotate:deg', 'hue-rotation:hue-rotate:deg',
 			'invert:%', 'inv:invert:%',
-			'opacity:%',
-			'saturate:%', 'saturation:saturate:%',
-			'sepia:%'
+			'opacity:%', 'op:opacity:%',
+			'saturate:%', 'saturation:saturate:%', 'sat:saturate:%',
+			'sepia:%', 'sep:sepia:%',
 		]
 
 		let colorFilterOptions = this.options.filter;

@@ -111,7 +111,7 @@ let rightColorFilter = [
 ```
 ![filterorder](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/filterorder.png)
 
-# License
+# MIT License
 This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
 
 # Changelog

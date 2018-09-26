@@ -59,6 +59,8 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 | **Invert** | invert, inv | Invert the tile colors | `['invert:100%']` | 0% |
 | **Saturate** | saturate, saturation, sat | Saturates the tile colors | `['saturate:150%']` | 100% |
 | **Sepia** | sepia, sep | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
+
+For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility_2).
  
 # Useful Tips
 **The following settings is enough to make most of the light maps to become dark:**

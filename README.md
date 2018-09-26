@@ -51,7 +51,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 | Filter | Aliases | Description | Example | Default |
 | --- | --- | --- | --- | --- |
 | **Blur** | blur | Applies a Gaussian blur filtering measured in pixels |  `['blur:2px']` | 0px |
-| **Brightness** | brightness, bright | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
+| **Brightness** | brightness, bright, bri | Controls the brightness of tile image |  `['brightness:150%']` | 100% |
 | **Contrast** | contrast, con | Changes the color contrast of tiles |   `['contrast:150%']` | 100% |
 | **Grayscale** | grayscale, gray | Changes the color of tiles to a grayscale |  `['grayscale:100%']` | 0% |
 | **Hue-Rotate** | hue-rotate, hue-rotation, hue | Applies a hue rotation in degrees on tile colors | `['hue:180deg']` | 0deg |

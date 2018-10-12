@@ -5,6 +5,7 @@ A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 
 ## Demo
 - [Leaflet.TileLayer.ColorFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
+- [Leaflet.TileLayer.ColorFilter.updateFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
 
 # Basic Usage
 
@@ -61,6 +62,22 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 | **Sepia** | sepia, sep | Converts the tile colors to sepia | `['sepia:0%']` | 0% |
 
 For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility_2).
+
+#### L.tileLayer.colorFilter.updateFilter(newFilter)
+On the fly changes on filter is supported with the `updateFilter` function ([Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
+```js
+let oldFilter = [
+     'grayscale:100%',
+     'invert:100%',
+]
+
+let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+    filter: oldFilter,
+}).addTo(map);
+
+myTileLayer.updateFilter(['brightness:110%', 'hue:90deg', 'saturate:120%']);
+```
  
 # Useful Tips
 **The following settings is enough to make most of the light maps to become dark:**
@@ -114,12 +131,19 @@ let rightColorFilter = [
 # MIT License
 This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
 
-# Changelog
-## 2018.09.24
+# Updates
+### 2018.10.11
+- Added the new function updateFilter, thanks to [AndreasSchmid1](https://github.com/AndreasSchmid1) request.
+- Now it is possible to start the colorFilter without the filter parameter.
+
+### 2018.09.26
+- Accepted by Leaflet in the [plugins list](https://leafletjs.com/plugins.html#tileimage-display) :)
+
+### 2018.09.24
 - Plugin renamed to Leaflet.TileLayer.ColorFilter.
 
-## 2018.09.23
+### 2018.09.23
 - Changed from object to array of strings, because the filter order matters. Moreover, the same filter can be used more than once.
 
-## 2018.09.20
+### 2018.09.20
 - Plugin created.

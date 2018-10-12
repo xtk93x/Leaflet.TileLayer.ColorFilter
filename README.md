@@ -63,7 +63,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 
 For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility_2).
 
-#### L.tileLayer.colorFilter.updateFilter(newFilter)
+#### myTileLayer.updateFilter(newFilter)
 On the fly changes on filter is supported with the `updateFilter` function ([Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
 ```js
 let oldFilter = [

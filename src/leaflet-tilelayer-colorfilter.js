@@ -51,6 +51,18 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 		tile.style.filter = this.colorFilter();
 		return tile;
 	},
+	updateFilter: function (newFilter) {
+		this.options.filter = newFilter;
+		for (let [key, value] of Object.entries(this._tiles)) {
+			if (L.version === "0.7.7") {
+				/* Version 0.7.7 */
+				value.style.filter = this.colorFilter();
+			} else {
+				/* Version 1.3.4 */
+				value.el.style.filter = this.colorFilter();
+			}
+		}
+	},
 })
 
 L.tileLayer.colorFilter = function (url, options) {

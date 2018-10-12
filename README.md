@@ -137,7 +137,7 @@ This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
 - Now it is possible to start the colorFilter without the filter parameter.
 
 ### 2018.09.26
-- Accepted by Leaflet in the [plugins list](https://leafletjs.com/plugins.html#tileimage-display) :)
+- Accepted by Leaflet in the [plugins list](https://leafletjs.com/plugins.html#tileimage-display) :).
 
 ### 2018.09.24
 - Plugin renamed to Leaflet.TileLayer.ColorFilter.

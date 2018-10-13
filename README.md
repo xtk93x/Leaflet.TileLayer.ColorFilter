@@ -52,7 +52,7 @@ A minimal complete example can be found in [example](https://github.com/xtk93x/L
 
 ## Reference
 
-#### L.tileLayer.colorFilter(url, options)
+### L.tileLayer.colorFilter(url, options)
 
 The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer that includes a new option `filter` inside `options` parameter. 
 
@@ -72,7 +72,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 
 For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility_2).
 
-#### myTileLayer.updateFilter(newFilter)
+### myTileLayer.updateFilter(newFilter)
 On the fly changes on filter is supported with the `updateFilter` function ([Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
 ```js
 let oldFilter = [

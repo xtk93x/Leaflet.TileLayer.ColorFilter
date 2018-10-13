@@ -42,7 +42,7 @@ let myFilter = [
     'sepia:10%',
 ];
 
-L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
     filter: myFilter,
 }).addTo(map);
@@ -75,6 +75,8 @@ For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](
 ### myTileLayer.updateFilter(newFilter)
 On the fly changes on filter is supported with the `updateFilter` function ([Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
 ```js
+let map = L.map('map').setView([51.505, -0.09], 14);
+
 let oldFilter = [
      'grayscale:100%',
      'invert:100%',

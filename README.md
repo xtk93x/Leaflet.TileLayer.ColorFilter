@@ -1,7 +1,7 @@
 # Leaflet.TileLayer.ColorFilter
 A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 
-![sidebyside](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/sidebyside.png)
+![sidebyside](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/sidebyside.png)
 
 ## Demo
 - [Leaflet.TileLayer.ColorFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
@@ -88,7 +88,7 @@ let myFilter = [
      'invert:100%',
 ]
 ```
-![dark](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/dark.png)
+![dark](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/dark.png)
 
 **To keep water and street colors, a hue rotation around 180deg is very helpful to correct the color inversion:**
 
@@ -98,7 +98,7 @@ let myFilter = [
      'invert:100%',
 ]
 ```
-![dark-colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/dark-colorized.png)
+![dark-colorized](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/dark-colorized.png)
     
 **Light maps may also look good:**
 
@@ -109,7 +109,7 @@ let myFilter = [
      'saturate:120%',
 ]
 ```
-![colorized](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/colorized.png)
+![colorized](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/colorized.png)
 
 **The filter order matters:**
 
@@ -126,7 +126,7 @@ let rightColorFilter = [
     'invert:100%',
 ]
 ```
-![filterorder](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/master/readme-files/filterorder.png)
+![filterorder](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/filterorder.png)
 
 # MIT License
 This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.

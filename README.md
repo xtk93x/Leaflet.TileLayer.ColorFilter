@@ -15,7 +15,7 @@ This plugin is available on NPM:
 npm install --save leaflet.tilelayer.colorfilter
 ```
 
-[Or download a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
+Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
 
 ## Basic Usage
 

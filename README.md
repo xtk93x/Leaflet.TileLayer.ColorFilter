@@ -7,13 +7,22 @@ A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 - [Leaflet.TileLayer.ColorFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
 - [Leaflet.TileLayer.ColorFilter.updateFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
 
-# Basic Usage
+## Install
 
-To use this plugin, just import leaflet-tilelayer-colorfilter.min.js **after** leaflet.js:
+This plugin is available on NPM:
+
+```
+npm install --save leaflet.tilelayer.colorfilter
+```
+
+[Or download a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
+
+## Basic Usage
+
+To use this plugin, just import leaflet-tilelayer-colorfilter.min.js **after** leaflet.js, for example:
 ```html
 <link rel="stylesheet" href="leaflet.css" />
 <script src="leaflet.js"></script>
-
 <script src="leaflet-tilelayer-colorfilter.min.js"></script>
 ```
 
@@ -41,7 +50,7 @@ L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
 
 A minimal complete example can be found in [example](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/tree/master/example/) folder.
 
-# Reference
+## Reference
 
 #### L.tileLayer.colorFilter(url, options)
 
@@ -79,7 +88,7 @@ let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{
 myTileLayer.updateFilter(['brightness:110%', 'hue:90deg', 'saturate:120%']);
 ```
  
-# Useful Tips
+## Useful Tips
 **The following settings is enough to make most of the light maps to become dark:**
 
 ```js
@@ -128,22 +137,25 @@ let rightColorFilter = [
 ```
 ![filterorder](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/filterorder.png)
 
-# MIT License
+## MIT License
 This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
 
-# Updates
-### 2018.10.11
+## Updates
+#### 2018.10.13
+- Package added to NPM.
+
+#### 2018.10.11
 - Added the new function updateFilter, thanks to [AndreasSchmid1](https://github.com/AndreasSchmid1) request.
 - Now it is possible to start the colorFilter without the filter parameter.
 
-### 2018.09.26
+#### 2018.09.26
 - Accepted by Leaflet in the [plugins list](https://leafletjs.com/plugins.html#tileimage-display) :).
 
-### 2018.09.24
+#### 2018.09.24
 - Plugin renamed to Leaflet.TileLayer.ColorFilter.
 
-### 2018.09.23
+#### 2018.09.23
 - Changed from object to array of strings, because the filter order matters. Moreover, the same filter can be used more than once.
 
-### 2018.09.20
+#### 2018.09.20
 - Plugin created.

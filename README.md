@@ -9,7 +9,7 @@ A simple and lightweight Leaflet plugin to apply CSS color filter on map tiles.
 
 ## Installation
 
-This plugin is available on NPM:
+This plugin is available in NPM:
 
 ```
 npm install --save leaflet.tilelayer.colorfilter

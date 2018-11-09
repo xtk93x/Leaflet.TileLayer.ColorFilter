@@ -4,8 +4,8 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 ![sidebyside](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/sidebyside.png)
 
 ## Demo
-- [Leaflet.TileLayer.ColorFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
-- [Leaflet.TileLayer.ColorFilter.updateFilter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
+- [Main Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
+- [Update Filter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
 
 ## Installation
 

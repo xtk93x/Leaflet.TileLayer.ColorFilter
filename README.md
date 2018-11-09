@@ -9,13 +9,21 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 
 ## Installation
 
-This plugin is available in [NPM](https://www.npmjs.com/package/leaflet.tilelayer.colorfilter):
+This plugin is available in:
+
+ - [NPM](https://www.npmjs.com/package/leaflet.tilelayer.colorfilter):
 
 ```
 npm install --save leaflet.tilelayer.colorfilter
 ```
 
-Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
+ - [Bower](https://bower.io):
+
+```
+bower install leaflet.tilelayer.colorfilter
+```
+
+ - Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
 
 ## Basic Usage
 
@@ -143,12 +151,13 @@ let rightColorFilter = [
 This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
 
 ## Updates
-#### 2018.10.13
-- Package added to NPM.
+#### 2018.11
+- v1.2.5: great improvement in performance. Very noticeable in mobile.
 
-#### 2018.10.11
+#### 2018.10
 - Added the new function updateFilter, thanks to [AndreasSchmid1](https://github.com/AndreasSchmid1) request.
 - Now it is possible to start the colorFilter without the filter parameter.
+- Package added to NPM and Bower.
 
 #### 2018.09.26
 - Accepted by Leaflet in the [plugins list](https://leafletjs.com/plugins.html#tileimage-display) :).

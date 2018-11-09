@@ -150,7 +150,7 @@ This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
 
 ## Updates
 #### 2018.11
-- v1.2.5: great improvement in performance. Very noticeable in mobile.
+- v1.2.5: great performance improvement. Very noticeable in mobile.
 
 #### 2018.10
 - Added the new function updateFilter, thanks to [AndreasSchmid1](https://github.com/AndreasSchmid1) request.

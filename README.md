@@ -3,9 +3,9 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 
 ![sidebyside](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/sidebyside.png)
 
-## Demo
-- [Main Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
-- [Update Filter Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
+## Demos
+- [Demo with a few presets.](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
+- [Make your own filter.](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
 
 ## Installation
 
@@ -79,7 +79,7 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility_2).
 
 ### myTileLayer.updateFilter(newFilter)
-On the fly changes on filter is supported with the `updateFilter` function ([Demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
+On the fly changes on filter is supported with the `updateFilter` function ([demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
 

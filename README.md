@@ -11,19 +11,19 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 
 This plugin is available in:
 
- - [NPM](https://www.npmjs.com/package/leaflet.tilelayer.colorfilter):
+[NPM](https://www.npmjs.com/package/leaflet.tilelayer.colorfilter):
 
 ```
 npm install --save leaflet.tilelayer.colorfilter
 ```
 
- - [Bower](https://bower.io):
+[Bower](https://bower.io):
 
 ```
 bower install leaflet.tilelayer.colorfilter
 ```
 
- - Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
+Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
 
 ## Basic Usage
 
@@ -56,7 +56,7 @@ let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{
 }).addTo(map);
 ```
 
-A minimal complete example can be found in [example](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/tree/master/example/) folder.
+A minimal complete example can be found in [example](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/tree/master/example/) folder. The min version also supports older browsers (ES5).
 
 ## Reference
 

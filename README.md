@@ -9,8 +9,6 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 
 ## Installation
 
-This plugin is available in:
-
 [NPM](https://www.npmjs.com/package/leaflet.tilelayer.colorfilter):
 
 ```

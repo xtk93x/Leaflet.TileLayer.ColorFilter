@@ -97,7 +97,7 @@ myTileLayer.updateFilter(['brightness:110%', 'hue:90deg', 'saturate:120%']);
 ```
 
 ### Custom filters
-It is also possible to use custom feMatrix filters defined within the main body of the code: 
+It is also possible to use custom feColorMatrix filters defined within the main body of the code: 
 
 ```html
 <svg>
@@ -122,7 +122,7 @@ let customfilter = [
 ];
 ```
 Here the phrase `url:mapfilter` is trasformed into the css equivalent of `url(#mapfilter)`. 
-![dark](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/customfilter.png)
+![feColorMatrix](./readme-files/customfilter.png)
 
 
 

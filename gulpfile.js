@@ -13,6 +13,8 @@ gulp.task('default', () =>
 		.pipe(header(`/*
   Leaflet.TileLayer.ColorFilter
   (c) 2018, Claudio T. Kawakani
+  Contributers:
+      Dan Ellis (2020) 
   A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
   https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
 */

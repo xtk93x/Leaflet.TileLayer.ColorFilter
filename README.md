@@ -111,7 +111,7 @@ It is also possible to use custom feColorMatrix filters defined within the main 
 </svg>
 ```
 
-From here we can now specify them using the `url` tag as part of our custom filter options:
+We can now specify them using the `url` tag as part of our custom filter options:
 
 ```js 
 let customfilter = [

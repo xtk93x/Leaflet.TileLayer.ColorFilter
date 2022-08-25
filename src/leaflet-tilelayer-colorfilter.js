@@ -1,6 +1,8 @@
 /*
   Leaflet.TileLayer.ColorFilter
   (c) 2018, Claudio T. Kawakani
+  Contributers:
+      Dan Ellis (2020) 
   A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
   https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
 */
@@ -32,7 +34,10 @@ L.TileLayer.ColorFilter = L.TileLayer.extend({
 					match = match.split(':');
 					filter[1] += /^\d+$/.test(filter[1]) ? match[match.length - 1] : ''
 					return (`${match[match.length - 2]}(${filter[1]})`);
-				}
+                }
+                else if (filter[0]==='url'){
+                    return `url(#${filter[1]})`
+                }
 			}
 			return ('');
 		}).join(' ');

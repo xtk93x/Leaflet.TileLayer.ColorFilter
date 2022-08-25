@@ -95,7 +95,37 @@ let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{
 
 myTileLayer.updateFilter(['brightness:110%', 'hue:90deg', 'saturate:120%']);
 ```
- 
+
+### Custom filters
+It is also possible to use custom feColorMatrix filters defined within the main body of the code: 
+
+```html
+<svg>
+  <filter id="mapfilter">
+   <feColorMatrix type="matrix"
+       values="1 0 0 0 0.0
+                0.45 0 0 0 0.5
+                0.30 0 0 0 0.70
+                0    0 0 1 1"/>
+  </filter>  
+</svg>
+```
+
+We can now specify them using the `url` tag as part of our custom filter options:
+
+```js 
+let customfilter = [
+     'contrast:120%',
+     'url:mapfilter',
+     'hue:180deg',
+     'invert:100%',
+];
+```
+Here the phrase `url:mapfilter` is trasformed into the css equivalent of `url(#mapfilter)`. 
+![feColorMatrix](./readme-files/customfilter.png)
+
+
+
 ## Useful Tips
 **The following settings is enough to make most of the light maps to become dark:**
 

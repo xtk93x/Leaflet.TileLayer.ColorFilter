@@ -21,12 +21,10 @@
   },
   "homepage": "https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter#readme",
   "scripts": {
-    "build": "babel src/leaflet-tilelayer-colorfilter.js --presets=@babel/env | terser -o dist/leaflet-tilelayer-colorfilter.min.js --comments true -c -m"
+    "build": "rollup -c"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "terser": "^5.0.0"
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^2.79.2"
   }
 }

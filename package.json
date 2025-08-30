@@ -20,14 +20,13 @@
     "url": "https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/issues"
   },
   "homepage": "https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter#readme",
-  "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-header": "^2.0.5",
-    "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.1"
+  "scripts": {
+    "build": "babel src/leaflet-tilelayer-colorfilter.js --presets=@babel/env | terser -o dist/leaflet-tilelayer-colorfilter.min.js --comments true -c -m"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "terser": "^5.0.0"
+  }
 }

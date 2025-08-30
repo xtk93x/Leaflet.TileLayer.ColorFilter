@@ -15,12 +15,6 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 npm install --save leaflet.tilelayer.colorfilter
 ```
 
-[Bower](https://bower.io):
-
-```
-bower install leaflet.tilelayer.colorfilter
-```
-
 Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
 
 ## Basic Usage
@@ -146,14 +140,30 @@ let rightColorFilter = [
 ![filterorder](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/filterorder.png)
 
 ## MIT License
-This project is licensed under the MIT License. (c) 2018, Cláudio T. Kawakani.
+This project is licensed under the MIT License. (c) 2025, Cláudio T. Kawakani.
 
 ## Updates
+
+### 2025.08
+- v2.0.0: Major Version Release
+
+This is a major release focused on modernizing the build process and ensuring compatibility with Leaflet 2.0.
+
+Breaking Changes:
+
+ - Leaflet 2.0 Support. This version is only compatible with Leaflet 2.0. For older versions of Leaflet, use Leaflet.TileLayer.ColorFilter v1.2.5.
+ - File Structure Update. The main distribution file has been moved from `src/` to `dist/`. If you are manually linking to the plugin, please update your script tag to reflect this change.
+
+Other Changes:
+
+- Build Process Modernization: The old Gulp build process has been replaced with a leaner, more secure pipeline using Rollup and Terser.
+- End of Bower Support: The `bower.json` file has been removed, and support for the Bower package manager has been officially discontinued.
+
 #### 2018.11
 - v1.2.5: great performance improvement. Very noticeable in mobile.
 
 #### 2018.10
-- Added the new function updateFilter, thanks to [AndreasSchmid1](https://github.com/AndreasSchmid1) request.
+- Added the new function updateFilter.
 - Now it is possible to start the colorFilter without the filter parameter.
 - Package added to NPM and Bower.
 

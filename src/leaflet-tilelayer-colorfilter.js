@@ -4,7 +4,6 @@
   A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
   https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
 */
-
 import { TileLayer } from 'leaflet';
 
 const colorFilter = function () {

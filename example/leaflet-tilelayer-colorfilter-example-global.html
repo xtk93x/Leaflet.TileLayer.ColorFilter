@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css" />
 
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
+
         #map {
             width: 100vw;
             height: 100vh;
@@ -25,32 +27,21 @@
 
     <div id="map"></div>
 
-    <script type="importmap">
-        {
-            "imports": {
-                "leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js"
-            }
-        }
-    </script>
-    <script type="module">
-        import { Map, TileLayer } from 'leaflet';
-        import '../dist/leaflet-tilelayer-colorfilter.min.js';
-
-        const map1 = new Map('map').setView([51.505, -0.09], 13);
-
-        const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-        const attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+    <script src="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-global.js"></script>
+    <script src="../dist/leaflet-tilelayer-colorfilter-global.min.js"></script>
+    <script>
+        const map = new L.Map('map').setView([51.505, -0.09], 13);
 
         let defaultToDarkFilter = [
             'invert:100%',
             'grayscale:50%'
         ];
 
-        const tilelayer = new TileLayer(tileUrl, {
+        const tilelayer = new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: attribution,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
             colorFilter: defaultToDarkFilter
-        }).addTo(map1);
+        }).addTo(map);
 
         let hue = 0;
         setInterval(() => {

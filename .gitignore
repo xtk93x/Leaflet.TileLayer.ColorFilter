@@ -3,3 +3,4 @@ node_modules
 .npmignore
 .vscode
 package-lock.json
+dist/*.map

@@ -1,18 +1,11 @@
 import terser from '@rollup/plugin-terser';
 
-const terserOptions = {
-  format: {
-    comments: (node, comment) => {
-      const text = comment.value;
-      const type = comment.type;
-      if (type === 'comment2') {
-        // multiline comment
-        return /Leaflet.TileLayer.ColorFilter/i.test(text);
-      }
-      return false;
-    },
-  },
-};
+const banner = `/*!
+  Leaflet.TileLayer.ColorFilter
+  (c) 2018-${new Date().getFullYear()}, Claudio T. Kawakani
+  A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.
+  https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter
+*/`;
 
 export default [
   {
@@ -21,9 +14,16 @@ export default [
       file: 'dist/leaflet-tilelayer-colorfilter.min.js',
       format: 'es',
       sourcemap: true,
+      banner: banner,
     },
     external: ['leaflet'],
-    plugins: [terser(terserOptions)],
+    plugins: [
+      terser({
+        format: {
+          comments: /^!|@preserve|@license|@cc_on/i,
+        },
+      }),
+    ],
   },
   {
     input: 'src/leaflet-tilelayer-colorfilter.js',
@@ -34,9 +34,16 @@ export default [
       globals: {
         leaflet: 'L',
       },
+      banner: banner,
     },
     external: ['leaflet'],
-    plugins: [terser(terserOptions)],
+    plugins: [
+      terser({
+        format: {
+          comments: /^!|@preserve|@license|@cc_on/i,
+        },
+      }),
+    ],
   },
 ];
 

@@ -32,6 +32,9 @@
     "url": "https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/issues"
   },
   "homepage": "https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter#readme",
+  "peerDependencies": {
+    "leaflet": ">=0.6.0 <3"
+  },
   "scripts": {
     "build": "rollup -c"
   },

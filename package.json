@@ -2,7 +2,19 @@
   "name": "leaflet.tilelayer.colorfilter",
   "version": "1.2.5",
   "description": "A simple and lightweight Leaflet plugin to apply CSS filters on map tiles.",
-  "main": "dist/leaflet-tilelayer-colorfilter.min.js",
+  "main": "dist/leaflet-tilelayer-colorfilter-global.min.js",
+  "module": "dist/leaflet-tilelayer-colorfilter.min.js",
+  "exports": {
+    "import": "./dist/leaflet-tilelayer-colorfilter.min.js",
+    "script": "./dist/leaflet-tilelayer-colorfilter-global.min.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "dist/leaflet-tilelayer-colorfilter.min.js",
+    "dist/leaflet-tilelayer-colorfilter-global.min.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter.git"

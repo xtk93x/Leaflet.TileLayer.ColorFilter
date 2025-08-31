@@ -13,7 +13,7 @@ export default [
     output: {
       file: 'dist/leaflet-tilelayer-colorfilter.min.js',
       format: 'es',
-      sourcemap: true,
+      sourcemap: false,
       banner: banner,
     },
     external: ['leaflet'],
@@ -30,7 +30,7 @@ export default [
     output: {
       file: 'dist/leaflet-tilelayer-colorfilter-global.min.js',
       format: 'umd',
-      sourcemap: true,
+      sourcemap: false,
       globals: {
         leaflet: 'L',
       },

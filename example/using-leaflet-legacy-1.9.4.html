@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Leaflet 2.0 - TileLayer ColorFilter</title>
+    <title>Leaflet 1.9.4 - TileLayer ColorFilter</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 
     <style>
         html,
@@ -27,27 +27,27 @@
 
     <div id="map"></div>
 
-    <script src="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-global.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="../dist/leaflet-tilelayer-colorfilter-global.min.js"></script>
     <script>
-        const map = new L.Map('map').setView([51.505, -0.09], 13);
+        const map = L.map('map').setView([51.505, -0.09], 13);
 
-        let defaultToDarkFilter = [
-            'invert:100%',
-            'grayscale:50%'
-        ];
+        const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
-        const tilelayer = new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        const osmToDarkFilter = ['invert:100%', 'grayscale:50%'];
+
+        const tilelayer = L.tileLayer(tileUrl, {
             maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-            colorFilter: defaultToDarkFilter
+            attribution: attribution,
+            colorFilter: osmToDarkFilter
         }).addTo(map);
 
         let hue = 0;
         setInterval(() => {
             hue = (hue + 10) % 360;
             tilelayer.updateColorFilter([
-                ...defaultToDarkFilter,
+                ...osmToDarkFilter,
                 `hue-rotate:${hue}deg`
             ]);
         }, 100);

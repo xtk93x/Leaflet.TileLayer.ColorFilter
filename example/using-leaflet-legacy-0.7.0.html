@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaflet 0.7.0 - TileLayer ColorFilter</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.0/dist/leaflet.css" crossorigin=""/>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@0.7.0/dist/leaflet.js" crossorigin=""></script>
+    <script src="../dist/leaflet-tilelayer-colorfilter-global.min.js"></script>
+    <script>
+        const map = L.map('map').setView([51.505, -0.09], 13);
+
+        const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+
+        const osmToDarkFilter = ['invert:100%', 'grayscale:50%'];
+
+        const tilelayer = L.tileLayer(tileUrl, {
+            maxZoom: 19,
+            attribution: attribution,
+            colorFilter: osmToDarkFilter
+        }).addTo(map);
+
+        let hue = 0;
+        setInterval(() => {
+            hue = (hue + 10) % 360;
+            tilelayer.updateColorFilter([
+                ...osmToDarkFilter,
+                `hue-rotate:${hue}deg`
+            ]);
+        }, 100);
+    </script>
+
+</body>
+
+</html>

@@ -185,7 +185,7 @@ let rightColorFilter = [
 
 If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plugin without any changes (see the [v1.2.5](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) or upgrade to `v2.x` by following the steps below. To use Leaflet 2, you must use `v2.x` of this plugin.
 
-When upgrading to `v2.x`, you will need to:
+When upgrading this plugin to `v2.x`, you will need to:
 
 - Update the imports according to the Leaflet version you are using.
 

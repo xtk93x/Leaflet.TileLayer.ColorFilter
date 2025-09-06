@@ -36,7 +36,6 @@
         const osmToDarkFilter = ['invert:100%', 'grayscale:50%'];
 
         const tilelayer = new L.TileLayer(tileUrl, {
-            maxZoom: 19,
             attribution: attribution,
             colorFilter: osmToDarkFilter
         }).addTo(map);

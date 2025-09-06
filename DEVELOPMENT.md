@@ -64,7 +64,7 @@ git merge my-new-feature
 
 This project follows Semantic Versioning (SemVer). When preparing a new release, decide on the version number based on the changes:
 
--   **MAJOR** (`v1.0.0` -> `v2.0.0`): For incompatible API changes (breaking changes).
+-   **MAJOR** (`v1.0.0` -> `v2.0.0`): For incompatible API changes (breaking changes). When a major version is released, users will not automatically upgrade to it by running `npm update`. They must explicitly install the new version (e.g., `npm install leaflet.tilelayer.colorfilter@2.0.0`) to avoid breaking their existing code.
 -   **MINOR** (`v1.1.0` -> `v1.2.0`): For adding functionality in a backward-compatible manner.
 -   **PATCH** (`v1.1.1` -> `v1.1.2`): For backward-compatible bug fixes.
 
@@ -76,7 +76,7 @@ Before publishing a new version, ensure the following steps are completed:
     -   Update `CHANGELOG.md` with all notable changes for the new version.
     -   Review `README.md` to ensure all examples and instructions are still accurate.
 -   **Verify `package.json`**:
-    -   Check that the `name`, `version`, `main`, `module`, and `files` fields are correct.
+    -   Check that fields like `name`, `main`, `module`, and `files` are correct. Do not manually edit the `version` field; it is managed automatically by the `npm version` command during the deployment step.
 -   **Final Testing**:
     -   Run the build process (`npm run build`) to ensure it completes without errors.
     -   Test the examples in `example/` to confirm the plugin works as expected.
@@ -130,3 +130,7 @@ This section clarifies how dependencies are managed in `package.json` and addres
 *   **`devDependencies`**: These are packages needed only for development and building the project, such as `rollup` and `@rollup/plugin-terser`. They are **not** included when a user installs this plugin from NPM. Because of this, security alerts from GitHub for these packages are generally not a concern for end-users, as this development code is not part of the final distributed product.
 
 *   **`peerDependencies`**: `leaflet` is listed as a `peerDependency`. This tells the user's package manager (like NPM) that your plugin requires Leaflet to be installed, but it doesn't install it for them. This is the correct approach for a plugin, as it prevents version conflicts and ensures the user has control over their Leaflet version.
+
+## Implementation Choice
+
+This plugin is designed to be imported for its side effects, which means it modifies Leaflet's `TileLayer` directly rather than exporting a new class. This is why the import is `import 'leaflet-tilelayer-colorfilter';`. This design prevents conflicts with other plugins; if this plugin exported its own `TileLayer` subclass, you couldn't use it with other plugins that do the same. By augmenting the original `TileLayer`, features from multiple plugins can be used together on the same layer.

@@ -42,7 +42,7 @@ For legacy versions of Leaflet, you need to include the `leaflet-tilelayer-color
     }).addTo(map);
 </script>
 ```
-A complete, working example can be found in `example/using-leaflet-legacy-1.9.4.html`.
+A complete, working example can be found in `example/using-leaflet-legacy-1.9.4.html`, and `example/using-leaflet-legacy-0.7.0.html`.
 
 ### Leaflet 2.x (Global)
 
@@ -188,21 +188,16 @@ If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plu
 When upgrading to `v2.x`, you will need to:
 
 - Update the imports according to the Leaflet version you are using.
-- Update your code to use the new syntax.
 
-**Updating the Imports**
+    - For older versions of Leaflet, such as 0.7.0 and 1.9.4, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
+    - For Leaflet 2.0 in Global Script mode, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
+    - For Leaflet 2.0 in Module mode, you should use `leaflet-tilelayer-colorfilter.min.js`.
 
-- For older versions of Leaflet, such as 0.7.0 and 1.9.4, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
-- For Leaflet 2.0 in Global Script mode, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
-- For Leaflet 2.0 in Module mode, you should use `leaflet-tilelayer-colorfilter.min.js`.
+- Update your code to use the new syntax. For the correct syntax, refer to the example that matches your Leaflet version: [Leaflet 1.x and older](#leaflet-1x-and-older), [Leaflet 2.x Global](#leaflet-2x-global), or [Leaflet 2.x Module](#leaflet-2x-module). In summary:
 
-**Updating the code**
-
-- The plugin now extends `TileLayer` directly.
-- The `filter` option has been renamed to `colorFilter`.
-- The `updateFilter()` method has been renamed to `updateColorFilter()`.
-
-For the correct syntax, refer to the example that matches your Leaflet version: [1.x and older](#leaflet-1x-and-older), [2.x Global](#leaflet-2x-global), or [2.x Module](#leaflet-2x-module).
+    - The plugin now extends `TileLayer` directly.
+    - The `filter` option has been renamed to `colorFilter`.
+    - The `updateFilter()` method has been renamed to `updateColorFilter()`.
 
 For a full list of changes, see the [CHANGELOG.md](./CHANGELOG.md).
 

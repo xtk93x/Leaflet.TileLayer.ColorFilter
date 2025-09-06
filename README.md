@@ -4,8 +4,9 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 
 ![sidebyside](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/sidebyside.png)
 
-> **Important.** 
->  With the release of Leaflet 2.0, which introduced significant changes (see [Leaflet 2.0 Alpha release notes](https://leafletjs.com/2025/05/18/leaflet-2.0.0-alpha.html)), a major update to this plugin was required. Leaflet.TileLayer.ColorFilter v2.0.0 introduces breaking changes that simplify usage, prevent conflicts, and ensure compatibility with both modern and legacy Leaflet versions. For more details, see the [Upgrading to Leaflet.TileLayer.ColorFilter v2.0.0](#upgrading-to-leaflettilelayercolorfilter-v200) section.
+> **Important: Breaking Changes in v2.0.0**
+> *   For existing projects on Leaflet 1.x, you can continue using `v1.2.5` of this plugin without any changes.
+> *   With the release of [Leaflet 2.0](https://leafletjs.com/2025/05/18/leaflet-2.0.0-alpha.html), this plugin has been updated to v2.0.0. This version introduces breaking changes to simplify usage and ensure compatibility. For details, please see the [Upgrading section](#upgrading-to-leaflettilelayercolorfilter-v200).
 
 ## Demos
 

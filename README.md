@@ -1,9 +1,14 @@
 # Leaflet.TileLayer.ColorFilter
+
 A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS color filter on map tiles.
 
 ![sidebyside](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/sidebyside.png)
 
+> **Important.** 
+>  With the release of Leaflet 2.0, which introduced significant changes (see [Leaflet 2.0 Alpha release notes](https://leafletjs.com/2025/05/18/leaflet-2.0.0-alpha.html)), a major update to this plugin was required. Leaflet.TileLayer.ColorFilter v2.0.0 introduces breaking changes that simplify usage, prevent conflicts, and ensure compatibility with both modern and legacy Leaflet versions. For more details, see the [Upgrading to Leaflet.TileLayer.ColorFilter v2.0.0](#upgrading-to-leaflettilelayercolorfilter-v200) section.
+
 ## Demos
+
 - [Demo with a few presets.](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter/)
 - [Make your own filter.](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)
 
@@ -17,46 +22,79 @@ npm install --save leaflet.tilelayer.colorfilter
 
 Or download [a release from the repository](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases).
 
-## Basic Usage
+## Usage
 
-To use this plugin, just import leaflet-tilelayer-colorfilter.min.js **after** leaflet.js, for example:
+This plugin can be used with Leaflet 2.0 and it's legacy versions.
+
+### Leaflet 1.x (and older)
+
+For legacy versions of Leaflet, you need to include the `leaflet-tilelayer-colorfilter-global.min.js` file after Leaflet.
+
 ```html
-<link rel="stylesheet" href="leaflet.css" />
-<script src="leaflet.js"></script>
-<script src="leaflet-tilelayer-colorfilter.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="leaflet-tilelayer-colorfilter-global.min.js"></script>
+<script>
+    const map = L.map('map').setView([51.505, -0.09], 13);
+    const tilelayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        colorFilter: ['invert:100%', 'grayscale:50%']
+    }).addTo(map);
+</script>
 ```
+A complete, working example can be found in `example/using-leaflet-legacy-1.9.4.html`.
 
-Setting up the map with L.tileLayer.colorFilter:
-```js
-let map = L.map('map').setView([51.505, -0.09], 14);
+### Leaflet 2.x (Global)
 
-let myFilter = [
-    'blur:0px',
-    'brightness:95%',
-    'contrast:130%',
-    'grayscale:20%',
-    'hue:290deg',
-    'opacity:100%',
-    'invert:100%',
-    'saturate:300%',
-    'sepia:10%',
-];
+For Leaflet 2.0 and newer using global scripts, include `leaflet-tilelayer-colorfilter-global.min.js`.
 
-let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    filter: myFilter,
-}).addTo(map);
+```html
+<script src="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-global.js"></script>
+<script src="leaflet-tilelayer-colorfilter-global.min.js"></script>
+<script>
+    const map = new L.Map('map').setView([51.505, -0.09], 13);
+    const tilelayer = new L.TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        colorFilter: ['invert:100%', 'grayscale:50%']
+    }).addTo(map);
+</script>
 ```
+A complete, working example can be found in `example/using-leaflet-2.0.0-global.html`.
 
-A minimal complete example can be found in [example](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/tree/master/example/) folder. The min version also supports older browsers (ES5).
+### Leaflet 2.x (Module)
+
+When using Leaflet as an ES module, you can import the plugin directly.
+
+```html
+<script type="importmap">
+    {
+        "imports": {
+            "leaflet": "https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.js"
+        }
+    }
+</script>
+<script type="module">
+    import { Map, TileLayer } from 'leaflet';
+    import 'leaflet-tilelayer-colorfilter';
+
+    const map = new Map('map').setView([51.505, -0.09], 13);
+    const tilelayer = new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        colorFilter: ['invert:100%', 'grayscale:50%']
+    }).addTo(map);
+</script>
+```
+A complete, working example can be found in `example/using-leaflet-2.0.0-module.html`. To run this example, you need to serve it through a local web server. This is because browsers restrict the use of ES modules (`import`/`export`) from local file paths for security reasons. A simple way to do this is to run `python3 -m http.server` in the project's root directory and then navigate to `http://localhost:8000/example/using-leaflet-2.0.0-module.html` in your browser.
+
+> **Technical Note.**
+>  The plugin is designed to be imported for its side effects, which means it modifies Leaflet's `TileLayer` directly rather than exporting a new class. This is why the import is `import 'leaflet-tilelayer-colorfilter';`. This design prevents conflicts with other plugins; if this plugin exported its own `TileLayer` subclass, you couldn't use it with other plugins that do the same. By augmenting the original `TileLayer`, features from multiple plugins can be used together on the same layer.
 
 ## Reference
 
-### L.tileLayer.colorFilter(url, options)
+### L.tileLayer(url, options)
 
-The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer that includes a new option `filter` inside `options` parameter. 
+After succesfully importing the plugin, L.tileLayer will have a new option `colorFilter` inside `options` parameter. 
 
-`filter` accepts an array of string filters with the following format:
+`colorFilter` accepts an array of string filters with the following format:
 
 | Filter | Aliases | Description | Example | Default |
 | --- | --- | --- | --- | --- |
@@ -72,8 +110,10 @@ The L.tileLayer.colorFilter is a simple extension of the original L.tileLayer th
 
 For *CSS Filter Browser Compatibility* please, refer to [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Browser_compatibility_2).
 
-### myTileLayer.updateFilter(newFilter)
-On the fly changes on filter is supported with the `updateFilter` function ([demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
+### myTileLayer.updateColorFilter(newFilter)
+
+On the fly changes on filter is supported with the `updateColorFilter` function ([demo](https://xtk93x.github.io/Leaflet.TileLayer.ColorFilter.updateFilter/)):
+
 ```js
 let map = L.map('map').setView([51.505, -0.09], 14);
 
@@ -82,15 +122,16 @@ let oldFilter = [
      'invert:100%',
 ]
 
-let myTileLayer = L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
-    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    filter: oldFilter,
+let myTileLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    colorFilter: oldFilter,
 }).addTo(map);
 
-myTileLayer.updateFilter(['brightness:110%', 'hue:90deg', 'saturate:120%']);
+myTileLayer.updateColorFilter(['brightness:110%', 'hue:90deg', 'saturate:120%']);
 ```
  
 ## Useful Tips
+
 **The following settings is enough to make most of the light maps to become dark:**
 
 ```js
@@ -139,42 +180,39 @@ let rightColorFilter = [
 ```
 ![filterorder](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/filterorder.png)
 
+## Upgrading to Leaflet.TileLayer.ColorFilter v2.0.0
+
+If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plugin without any changes (see the [v1.2.5](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) or upgrade to `v2.0.0` by following the steps below. To use Leaflet 2.0, you must use `v2.0.0` of this plugin.
+
+When upgrading to `v2.0.0`, you will need to:
+
+- Update the imports according to the Leaflet version you are using.
+- Update your code to use the new API.
+
+**Updating the Imports**
+
+- For older versions of Leaflet, such as 0.7.0 and 1.9.4, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
+- For Leaflet 2.0 in Global Script mode, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
+- For Leaflet 2.0 in Module mode, you should use `leaflet-tilelayer-colorfilter.min.js`.
+
+**Updating the code**
+
+- The plugin now extends `L.TileLayer` directly. Just use the standard `L.tileLayer()` factory with the `colorFilter` option.
+- The `filter` option has been renamed to `colorFilter`.
+- The `updateFilter()` method has been renamed to `updateColorFilter()`.
+
+```js
+// Old v1 code
+const myTileLayer = L.tileLayer.colorFilter(url, { filter: myFilter });
+myTileLayer.updateFilter(newFilter);
+
+// New v2 code
+const myTileLayer = L.tileLayer(url, { colorFilter: myFilter });
+myTileLayer.updateColorFilter(newFilter);
+```
+
+For a full list of changes, see the [CHANGELOG.md](./CHANGELOG.md).
+
 ## MIT License
+
 This project is licensed under the MIT License. (c) 2018-2025, Cláudio T. Kawakani.
-
-## Updates
-
-### 2025.08
-- v2.0.0: Major Version Release
-
-This is a major release focused on modernizing the build process and ensuring compatibility with Leaflet 2.0.
-
-Breaking Changes:
-
- - Leaflet 2.0 Support. This version is only compatible with Leaflet 2.0. For older versions of Leaflet, use Leaflet.TileLayer.ColorFilter v1.2.5.
- - File Structure Update. The main distribution file has been moved from `src/` to `dist/`. If you are manually linking to the plugin, please update your script tag to reflect this change.
-
-Other Changes:
-
-- Build Process Modernization: The old Gulp build process has been replaced with a leaner, more secure pipeline using Rollup and Terser.
-- End of Bower Support: The `bower.json` file has been removed, and support for the Bower package manager has been officially discontinued.
-
-#### 2018.11
-- v1.2.5: great performance improvement. Very noticeable in mobile.
-
-#### 2018.10
-- Added the new function updateFilter.
-- Now it is possible to start the colorFilter without the filter parameter.
-- Package added to NPM and Bower.
-
-#### 2018.09.26
-- Accepted by Leaflet in the [plugins list](https://leafletjs.com/plugins.html#tileimage-display) :).
-
-#### 2018.09.24
-- Plugin renamed to Leaflet.TileLayer.ColorFilter.
-
-#### 2018.09.23
-- Changed from object to array of strings, because the filter order matters. Moreover, the same filter can be used more than once.
-
-#### 2018.09.20
-- Plugin created.

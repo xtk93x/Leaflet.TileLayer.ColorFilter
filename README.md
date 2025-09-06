@@ -25,7 +25,7 @@ Or download [a release from the repository](https://github.com/xtk93x/Leaflet.Ti
 
 ## Usage
 
-This plugin can be used with Leaflet 2.0 and it's legacy versions.
+This plugin can be used with Leaflet 2 and it's legacy versions.
 
 ### Leaflet 1.x (and older)
 
@@ -46,7 +46,7 @@ A complete, working example can be found in `example/using-leaflet-legacy-1.9.4.
 
 ### Leaflet 2.x (Global)
 
-For Leaflet 2.0 and newer using global scripts, include `leaflet-tilelayer-colorfilter-global.min.js`.
+For Leaflet 2 using global scripts, include `leaflet-tilelayer-colorfilter-global.min.js`.
 
 ```html
 <script src="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-global.js"></script>
@@ -63,7 +63,7 @@ A complete, working example can be found in `example/using-leaflet-2.0.0-global.
 
 ### Leaflet 2.x (Module)
 
-When using Leaflet as an ES module, you can import the plugin directly.
+When using Leaflet 2 as an ES module, you can import the plugin directly.
 
 ```html
 <script type="importmap">
@@ -183,15 +183,14 @@ let rightColorFilter = [
 
 ## Upgrading to Leaflet.TileLayer.ColorFilter v2.x
 
-If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plugin without any changes (see the [v1.2.5](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) or upgrade to `v2.x` by following the steps below. To use Leaflet 2.0, you must use `v2.x` of this plugin.
+If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plugin without any changes (see the [v1.2.5](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) or upgrade to `v2.x` by following the steps below. To use Leaflet 2, you must use `v2.x` of this plugin.
 
 When upgrading to `v2.x`, you will need to:
 
 - Update the imports according to the Leaflet version you are using.
 
-    - For older versions of Leaflet, such as 0.7.0 and 1.9.4, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
-    - For Leaflet 2.0 in Global Script mode, you should use `leaflet-tilelayer-colorfilter-global.min.js`.
-    - For Leaflet 2.0 in Module mode, you should use `leaflet-tilelayer-colorfilter.min.js`.
+    - For Leaflet 2 in **Global Script mode** (or Leaflet 1.x and older), use `leaflet-tilelayer-colorfilter-global.min.js`.
+    - For Leaflet 2 in **Module mode**, use `leaflet-tilelayer-colorfilter.min.js`.
 
 - Update your code to use the new syntax. For the correct syntax, refer to the example that matches your Leaflet version: [Leaflet 1.x and older](#leaflet-1x-and-older), [Leaflet 2.x Global](#leaflet-2x-global), or [Leaflet 2.x Module](#leaflet-2x-module). In summary:
 

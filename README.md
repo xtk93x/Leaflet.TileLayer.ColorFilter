@@ -4,9 +4,9 @@ A simple and lightweight [Leaflet](https://leafletjs.com/) plugin to apply CSS c
 
 ![sidebyside](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/sidebyside.png)
 
-> **Important: Breaking Changes in v2.0.0**
-> *   For existing projects on Leaflet 1.x, you can continue using `v1.2.5` of this plugin without any changes.
-> *   With the release of [Leaflet 2.0](https://leafletjs.com/2025/05/18/leaflet-2.0.0-alpha.html), this plugin has been updated to v2.0.0. This version introduces breaking changes to simplify usage and ensure compatibility. For details, please see the [Upgrading section](#upgrading-to-leaflettilelayercolorfilter-v200).
+> **Important: Breaking Changes in ColorFilter v2.x**
+> *   For existing projects on Leaflet 1.x, you can continue using v1.2.5 ([release](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases/tag/1.2.5), [readme](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) of this plugin without any changes.
+> *   With the release of [Leaflet 2.0](https://leafletjs.com/2025/05/18/leaflet-2.0.0-alpha.html), this plugin has been updated to v2.x. This version introduces breaking changes to simplify usage and ensure compatibility. For details, please see the [Upgrading section](#upgrading-to-leaflettilelayercolorfilter-v2x).
 
 ## Demos
 
@@ -91,9 +91,9 @@ A complete, working example can be found in `example/using-leaflet-2.0.0-module.
 
 ## Reference
 
-### L.tileLayer(url, options)
+### TileLayer(url, options)
 
-After succesfully importing the plugin, L.tileLayer will have a new option `colorFilter` inside `options` parameter. 
+After succesfully importing the plugin, TileLayer will have the new option `colorFilter` inside `options` parameter. 
 
 `colorFilter` accepts an array of string filters with the following format:
 
@@ -181,14 +181,14 @@ let rightColorFilter = [
 ```
 ![filterorder](https://raw.githubusercontent.com/xtk93x/Leaflet.TileLayer.ColorFilter/master/readme-files/filterorder.png)
 
-## Upgrading to Leaflet.TileLayer.ColorFilter v2.0.0
+## Upgrading to Leaflet.TileLayer.ColorFilter v2.x
 
-If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plugin without any changes (see the [v1.2.5](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) or upgrade to `v2.0.0` by following the steps below. To use Leaflet 2.0, you must use `v2.0.0` of this plugin.
+If you are using Leaflet 1.x, you can either continue using `v1.2.5` of this plugin without any changes (see the [v1.2.5](https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/blob/1.2.5/README.md)) or upgrade to `v2.x` by following the steps below. To use Leaflet 2.0, you must use `v2.x` of this plugin.
 
-When upgrading to `v2.0.0`, you will need to:
+When upgrading to `v2.x`, you will need to:
 
 - Update the imports according to the Leaflet version you are using.
-- Update your code to use the new API.
+- Update your code to use the new syntax.
 
 **Updating the Imports**
 
@@ -198,19 +198,11 @@ When upgrading to `v2.0.0`, you will need to:
 
 **Updating the code**
 
-- The plugin now extends `L.TileLayer` directly. Just use the standard `L.tileLayer()` factory with the `colorFilter` option.
+- The plugin now extends `TileLayer` directly.
 - The `filter` option has been renamed to `colorFilter`.
 - The `updateFilter()` method has been renamed to `updateColorFilter()`.
 
-```js
-// Old v1 code
-const myTileLayer = L.tileLayer.colorFilter(url, { filter: myFilter });
-myTileLayer.updateFilter(newFilter);
-
-// New v2 code
-const myTileLayer = L.tileLayer(url, { colorFilter: myFilter });
-myTileLayer.updateColorFilter(newFilter);
-```
+For the correct syntax, refer to the example that matches your Leaflet version: [1.x and older](#leaflet-1x-and-older), [2.x Global](#leaflet-2x-global), or [2.x Module](#leaflet-2x-module).
 
 For a full list of changes, see the [CHANGELOG.md](./CHANGELOG.md).
 

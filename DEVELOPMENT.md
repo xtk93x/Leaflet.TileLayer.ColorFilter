@@ -131,6 +131,13 @@ After completing the checklist and merging all changes into the `master` branch,
     npm publish
     ```
 
+7.  **Create a GitHub Release:**
+    After publishing to NPM, create a corresponding release on GitHub to document the new version.
+    1.  Go to the **Releases** page in your GitHub repository (`https://github.com/xtk93x/Leaflet.TileLayer.ColorFilter/releases`).
+    2.  Click **"Draft a new release"**.
+    3.  Choose the tag you just pushed (e.g., `v2.0.0`) from the dropdown.
+    4.  Copy the relevant updates from `CHANGELOG.md` and paste them into the release description.
+
 ## Tooling
 
 This project uses a minimal set of tools to keep things simple.

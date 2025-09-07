@@ -56,8 +56,14 @@ Once development is complete, merge the feature branch back into `master`. The `
 # Switch to the main branch
 git checkout master
 
+# Make sure your local master is up-to-date before merging
+git pull origin master
+
 # Merge the feature branch
 git merge my-new-feature
+
+# Push the merge commit to the remote repository
+git push origin master
 ```
 
 ### 2. Versioning

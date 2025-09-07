@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - The `L.tileLayer.colorFilter()` factory has been removed. The plugin now extends `L.TileLayer` directly.
 - Renamed `filter` option to `colorFilter` for clarity.
 - Renamed `updateFilter()` method to `updateColorFilter()`.
+- Moved the minified output files from `src/` to `dist/` to follow standard project structure.
 - Dropped support for Bower.
 
 ### Changed

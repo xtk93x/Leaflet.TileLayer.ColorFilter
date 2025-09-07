@@ -109,12 +109,18 @@ After completing the checklist and merging all changes into the `master` branch,
     git push origin master --follow-tags
     ```
 
-4. **Verify NPM login**
+4.  **Verify NPM login:**
     ```bash
     npm whoami || npm login
     ```
 
-4.  **Publish to NPM:**
+5.  **Perform a dry run (Optional but Recommended):**
+    Before publishing, you can perform a dry run to see which files will be included in the package.
+    ```bash
+    npm publish --dry-run
+    ```
+
+6.  **Publish to NPM:**
     ```bash
     npm publish
     ```

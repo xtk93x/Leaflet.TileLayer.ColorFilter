@@ -47,14 +47,14 @@ All new features and bug fixes should be developed on a separate feature branch.
 
 ```bash
 # Create a new branch from the main branch
-git checkout -b my-new-feature main
+git checkout -b my-new-feature master
 ```
 
-Once development is complete, merge the feature branch back into `main`. The `main` branch should always reflect the latest stable code.
+Once development is complete, merge the feature branch back into `master`. The `master` branch should always reflect the latest stable code.
 
 ```bash
 # Switch to the main branch
-git checkout main
+git checkout master
 
 # Merge the feature branch
 git merge my-new-feature
@@ -83,12 +83,12 @@ Before publishing a new version, ensure the following steps are completed:
 
 ### 4. Deployment to NPM
 
-After completing the checklist and merging all changes into the `main` branch, follow these steps to publish:
+After completing the checklist and merging all changes into the `master` branch, follow these steps to publish:
 
-1.  **Ensure `main` is up-to-date:**
+1.  **Ensure `master` is up-to-date:**
     ```bash
-    git checkout main
-    git pull origin main
+    git checkout master
+    git pull origin master
     ```
 
 2.  **Bump the version:**
@@ -106,7 +106,12 @@ After completing the checklist and merging all changes into the `main` branch, f
 
 3.  **Push the changes and tags:**
     ```bash
-    git push origin main --follow-tags
+    git push origin master --follow-tags
+    ```
+
+4. **Verify NPM login**
+    ```bash
+    npm whoami || npm login
     ```
 
 4.  **Publish to NPM:**
